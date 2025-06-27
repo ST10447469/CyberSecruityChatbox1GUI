@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="CybersecurityChatbotGUI.Views.TasksView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Tasks}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Task" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Due" 
+                                    Binding="{Binding ReminderDate, Converter={StaticResource DateTimeToReminderStringConverter}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
